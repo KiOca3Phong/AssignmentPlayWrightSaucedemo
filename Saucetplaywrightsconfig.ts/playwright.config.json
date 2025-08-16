@@ -1,0 +1,32 @@
+{
+  "testDir": "./tests",
+  "timeout": 30000,
+  "expect": {
+    "timeout": 5000
+  },
+  "fullyParallel": true,
+  "retries": 1,
+  "reporter": [
+    ["list"],
+    ["html", { "outputFolder": "playwright-report", "open": "never" }],
+    ["allure-playwright"]
+  ],
+  "use": {
+    "baseURL": "https://www.saucedemo.com/",
+    "trace": "on-first-retry",
+    "screenshot": "only-on-failure",
+    "video": "retain-on-failure",
+    "headless": true
+  },
+  "projects": [
+    {
+      "name": "chromium"
+    },
+    {
+      "name": "firefox"
+    },
+    {
+      "name": "webkit"
+    }
+  ]
+}
